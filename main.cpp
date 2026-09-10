@@ -16,6 +16,8 @@ int main() {
     chocolateStore.addItem(darkChocolate);
     chocolateStore.addItem(whiteChocolate);
 
+    chocolateStore.removeItem("Dark Chocolate");
+
     chocolateStore.displayAll();
 
 
