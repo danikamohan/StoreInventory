@@ -1,5 +1,6 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
+
 #include "item.h"
 #include <string>
 #include <iostream>
@@ -11,19 +12,19 @@ private:
     int count = 0;
     
 public:
+    // only adds new item if there is less than 200 items in inventory count
     void addItem(Item newItem) {
         if (count < 200) {
             items[count] = newItem;
             count++;
         }
     }
+    // calls displayFunction from item.h
     void displayAll() {
         for (int i = 0; i < count; i++) {
             items[i].displayFunction();
-    
         }
     }
-
     // remove an item
     void removeItem(string itemName) {
         for (int i = 0; i < count; i++) {
@@ -38,12 +39,8 @@ public:
                 return;
             }
         }
+        // let user know if item not found
         cout << itemName << " was not found.\n";
     }
-    
 };
-
-
-
-
 #endif

@@ -7,22 +7,23 @@ using namespace std;
 
 class Item {
 private:
-    
     string name;
     double price = 0;
     int quantity = 0;
 public:
-    
+    // constructor that takes arguments
     Item(string n, double p, int q) {
         name = n;
         price = p;
         quantity = q;
     }
+    // constructor that takes no arguments
     Item() {
         name = "";
         price = 0.0;
         quantity = 0;
     }
+    // print out the name,price, and quantity of an item in a neat fashion
     void displayFunction() {
         cout << "\n----------------------\n"
         << "Item name: " << name
@@ -51,8 +52,4 @@ public:
         quantity = q;
     }
 };
-
-
-
-
 #endif
