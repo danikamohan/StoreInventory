@@ -1,0 +1,14 @@
+# Editor settings
+.vscode/
+
+# macOS debug symbols
+*.dSYM/
+
+# macOS system file
+.DS_Store
+
+# Compiled files
+*.o
+*.out
+inventory
+inventory_test
