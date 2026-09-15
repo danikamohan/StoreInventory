@@ -25,6 +25,51 @@ public:
             items[i].displayFunction();
         }
     }
+    // search item by name and print details
+    void searchItem(string itemName) {
+        for (int i = 0; i < count; i++) {
+            string n = items[i].getName();
+            if (n == itemName) {
+                items[i].displayFunction();
+                return;
+            }
+        }
+        cout << itemName << " was not found.\n";
+    }
+    // sorting item names in alphabetical order
+    void sortByName() {
+        bool swapped = true;
+        while (swapped) {
+            swapped = false;
+            for (int i = 0; i < count - 1; i++) {
+                string n = items[i].getName();
+                if (n > items[i+1].getName()) {
+                    Item temp;
+                    temp = items[i];
+                    items[i] = items[i+1];
+                    items[i+1] = temp;
+                    swapped = true;
+                }
+            }
+        }
+    }
+    // sorting items by price (cheapest to highest price)
+    void sortByPrice() {
+        bool swapped = true;
+        while (swapped) {
+            swapped = false;
+            for (int i = 0; i < count - 1; i++) {
+                double p = items[i].getPrice();
+                if (p > items[i+1].getPrice()) {
+                    Item temp;
+                    temp = items[i];
+                    items[i] = items[i+1];
+                    items[i+1] = temp;
+                    swapped = true;
+                }
+            }
+        }
+    }
     // remove an item
     void removeItem(string itemName) {
         for (int i = 0; i < count; i++) {
@@ -42,5 +87,6 @@ public:
         // let user know if item not found
         cout << itemName << " was not found.\n";
     }
+   
 };
 #endif
